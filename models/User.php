@@ -21,6 +21,12 @@ class User extends Model {
     }
 
     public function create($name, $email, $password) {
+
+        //No agregamos la restricción de que el email sea unico en la base de datos
+        //buscar un usuario con el email $email, en caso de que exista lanzar un error
+
+        //verificar email
+
         $stmt = $this->db->prepare("
             INSERT INTO users (name, email, password)
             VALUES (?, ?, ?)
